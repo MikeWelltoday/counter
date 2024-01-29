@@ -43,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "K:/samurai-way/samurai/counter",
+    "last_opened_file_path": "D:/samurai-way/samurai/counter",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -51,7 +51,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "settings.editor.selected.configurable": "editing.templates",
-    "ts.external.directory.path": "K:\\samurai-way\\samurai\\counter\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\samurai-way\\samurai\\counter\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -73,6 +73,7 @@
       <workItem from="1706525366383" duration="396000" />
       <workItem from="1706530218372" duration="600000" />
       <workItem from="1706531798722" duration="3242000" />
+      <workItem from="1706538982774" duration="1896000" />
     </task>
     <task id="LOCAL-00001" summary="=&gt; saved">
       <option name="closed" value="true" />
