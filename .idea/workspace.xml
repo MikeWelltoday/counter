@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1574361-4a83-49e4-a44f-21e9010d60c1" name="Changes" comment="=&gt; saved" />
+    <list default="true" id="b1574361-4a83-49e4-a44f-21e9010d60c1" name="Changes" comment="=&gt; saved">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +50,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "editing.templates",
     "ts.external.directory.path": "K:\\samurai-way\\samurai\\counter\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -67,7 +70,9 @@
       <workItem from="1706506446154" duration="26000" />
       <workItem from="1706524884142" duration="165000" />
       <workItem from="1706525067989" duration="23000" />
-      <workItem from="1706525366383" duration="76000" />
+      <workItem from="1706525366383" duration="396000" />
+      <workItem from="1706530218372" duration="600000" />
+      <workItem from="1706531798722" duration="3242000" />
     </task>
     <task id="LOCAL-00001" summary="=&gt; saved">
       <option name="closed" value="true" />
@@ -85,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706524993508</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="=&gt; saved">
+      <option name="closed" value="true" />
+      <created>1706525475657</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706525475657</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
