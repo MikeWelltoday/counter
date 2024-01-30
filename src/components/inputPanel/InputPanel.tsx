@@ -1,7 +1,9 @@
 import React, {ChangeEvent, FC, KeyboardEvent} from 'react'
 import S from './InputPanel.module.scss'
 import {Button} from '../button/Button'
-import {ErroeType} from '../../App'
+import {ErrorType} from '../../App'
+import {types} from 'sass'
+import Boolean = types.Boolean
 
 //======================================================================================================
 
@@ -9,7 +11,7 @@ type InputPanelPropsType = {
     maxNum: number
     minNum: number
     inputMode: boolean
-    error: ErroeType
+    error: ErrorType
     maxNumChange: (num: number) => void
     minNumChange: (num: number) => void
     inputModeChange: (mode: boolean) => void
@@ -22,10 +24,12 @@ export const InputPanel: FC<InputPanelPropsType> = (props) => {
 
     function maxNumChangeOnChange(event: ChangeEvent<HTMLInputElement>) {
         props.maxNumChange(parseInt(event.currentTarget.value, 10))
+        props.inputModeChange(true)
     }
 
     function minNumChangeOnChange(event: ChangeEvent<HTMLInputElement>) {
         props.minNumChange(parseInt(event.currentTarget.value, 10))
+        props.inputModeChange(true)
     }
 
     function inputModeChangeOnFocus() {
@@ -52,34 +56,34 @@ export const InputPanel: FC<InputPanelPropsType> = (props) => {
 
                 <div className={S.inputBox}>
                     <label htmlFor="maxValue">max Value</label>
-                    <input className={`${props.error === 'both' && S.error}`}
+                    <input className={`${props.error === '2' && S.error}`}
                            id={'maxValue'}
                            type="number"
                            value={props.maxNum}
+                           onChange={maxNumChangeOnChange}
                            onFocus={inputModeChangeOnFocus}
                            onBlur={inputModeChangeOnBlur}
-                           onChange={maxNumChangeOnChange}
                            onKeyDown={inputModeChangeOnKeyDownHandler}
                     />
                 </div>
 
                 <div className={S.inputBox}>
                     <label htmlFor="minValue">min Value</label>
-                    <input className={`${(props.error === 'both' || props.error === 'bottom') && S.error}`}
+                    <input className={`${props.error && S.error}`}
                            id={'minValue'}
                            type="number"
                            value={props.minNum}
+                           onChange={minNumChangeOnChange}
                            onFocus={inputModeChangeOnFocus}
                            onBlur={inputModeChangeOnBlur}
-                           onChange={minNumChangeOnChange}
                            onKeyDown={inputModeChangeOnKeyDownHandler}
                     />
                 </div>
             </div>
 
             <div className={`body__buttonsContainer ${S.buttonsContainer}`}>
-                <Button disabled={props.error === 'both' || props.error === 'bottom' || !props.inputMode}
-                        click={props.reset}
+                <Button disabled={!!props.error || !props.inputMode}
+                        onClick={props.reset}
                 >set</Button>
             </div>
         </div>

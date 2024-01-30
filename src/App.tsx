@@ -5,36 +5,33 @@ import {InputPanel} from './components/inputPanel/InputPanel'
 
 //======================================================================================================
 
-export type ErroeType = 'both' | 'bottom' | 'ok'
+export type ErrorType = '2' | '1' | ''
+
+//======================================================================================================
+
+function setInLocalStorage(name: string, item: number) {
+    localStorage.setItem(`${name}`, JSON.stringify(item))
+}
+
+function getFromLocalStorage(name: string) {
+    let valueAsString = localStorage.getItem(name)
+    if (valueAsString) {
+        return JSON.parse(valueAsString)
+    }
+}
 
 //======================================================================================================
 
 function App() {
 
-    const [initialMaxNum, initialMinNum] = [20, 10]
+    const initialMaxNum = 20
+    const initialMinNum = 10
 
-    const [maxNum, setMaxNum] = useState(initialMaxNum)
-    const [minNum, setMinNum] = useState(initialMinNum)
-    const [num, setNum] = useState(minNum)
+    const [maxNum, setMaxNum] = useState(() => getFromLocalStorage('maxNum') || initialMaxNum)
+    const [minNum, setMinNum] = useState(() => getFromLocalStorage('minNum') || initialMinNum)
+    const [num, setNum] = useState(() => getFromLocalStorage('num') || initialMinNum)
     const [inputMode, setInputMode] = useState(false)
-    const [error, setError] = useState<ErroeType>('ok')
-
-    function setInLocalStorage(name: string, item: number) {
-        localStorage.setItem(`${name}`, JSON.stringify(item))
-    }
-
-    function getFromLocalStorage(name: string) {
-        let valueAsString = localStorage.getItem(name)
-        if (valueAsString) {
-            return JSON.parse(valueAsString)
-        }
-    }
-
-    useEffect(() => {
-        setMaxNum(getFromLocalStorage('maxNum') || initialMaxNum)
-        setMinNum(getFromLocalStorage('minNum') || initialMinNum)
-        setNum(getFromLocalStorage('num') || initialMinNum)
-    }, [])
+    const [error, setError] = useState<ErrorType>('')
 
     useEffect(() => {
         setInLocalStorage('maxNum', maxNum)
@@ -49,9 +46,9 @@ function App() {
     }, [num])
 
     useEffect(() => {
-        if (!(minNum < 0)) setError('bottom')
-        if (!(maxNum - minNum <= 0)) setError('both')
-        if (maxNum - minNum >= 0 && minNum >= 0) setError('ok')
+        if (minNum < 0) setError('1')
+        if (maxNum - minNum <= 0) setError('2')
+        if (maxNum - minNum > 0 && minNum >= 0) setError('')
     }, [maxNum, minNum])
 
     function maxNumChange(num: number) {
@@ -63,7 +60,9 @@ function App() {
     }
 
     function increment() {
-        if (num < maxNum) setNum(num + 1)
+        if (num < maxNum) {
+            setNum(num + 1)
+        }
     }
 
     function reset() {
@@ -76,7 +75,6 @@ function App() {
 
     return (
         <div className={'App'}>
-
             <InputPanel
                 maxNum={maxNum}
                 minNum={minNum}
@@ -94,9 +92,7 @@ function App() {
                 inputMode={inputMode}
                 error={error}
                 increment={increment}
-                reset={reset}
-            />
-
+                reset={reset}/>
         </div>
     )
 }

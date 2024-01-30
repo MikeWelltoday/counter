@@ -12,8 +12,8 @@
   &.notActive {
     opacity: 0.2;
   }
-}
 
-.button:active {
-  transform: scale(1.1);
+  &:active {
+    transform: scale(1.1);
+  }
 }
