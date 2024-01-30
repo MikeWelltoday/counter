@@ -1,0 +1,54 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b1574361-4a83-49e4-a44f-21e9010d60c1\" name=\"Changes\" comment=\"=&gt; saved\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.tsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"SCSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FormatOnSaveOptions\">\r\n    <option name=\"myRunOnSave\" value=\"true\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2azOnJMA4buOOQhyShVKzOlV4gE\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"last_opened_file_path\": \"K:/samurai-way/samurai/counter\",\r\n    \"list.type.of.created.stylesheet\": \"SCSS\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"yarn\",\r\n    \"settings.editor.selected.configurable\": \"editing.templates\",\r\n    \"ts.external.directory.path\": \"K:\\\\samurai-way\\\\samurai\\\\counter\\\\node_modules\\\\typescript\\\\lib\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b1574361-4a83-49e4-a44f-21e9010d60c1\" name=\"Changes\" comment=\"\" />\r\n      <created>1705318107168</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1705318107168</updated>\r\n      <workItem from=\"1705318108405\" duration=\"27000\" />\r\n      <workItem from=\"1705571255531\" duration=\"698000\" />\r\n      <workItem from=\"1705583387725\" duration=\"8000\" />\r\n      <workItem from=\"1705586253591\" duration=\"18000\" />\r\n      <workItem from=\"1706506446154\" duration=\"26000\" />\r\n      <workItem from=\"1706524884142\" duration=\"165000\" />\r\n      <workItem from=\"1706525067989\" duration=\"23000\" />\r\n      <workItem from=\"1706525366383\" duration=\"396000\" />\r\n      <workItem from=\"1706530218372\" duration=\"600000\" />\r\n      <workItem from=\"1706531798722\" duration=\"3242000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"=&gt; saved\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1705571596719</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1705571596719</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"=&gt; saved\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706524993508</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706524993508</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"=&gt; saved\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1706525475657</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1706525475657</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"=&gt; saved\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"=&gt; saved\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c99e56fa349ac594853009b8c535aefd953033fc)
++++ b/.idea/workspace.xml	(date 1706537199354)
+@@ -6,7 +6,6 @@
+   <component name="ChangeListManager">
+     <list default="true" id="b1574361-4a83-49e4-a44f-21e9010d60c1" name="Changes" comment="=&gt; saved">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -43,7 +42,7 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "WebServerToolWindowFactoryState": "false",
+     "git-widget-placeholder": "main",
+-    "last_opened_file_path": "K:/samurai-way/samurai/counter",
++    "last_opened_file_path": "K:/samurai-way/PastPapers",
+     "list.type.of.created.stylesheet": "SCSS",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+@@ -72,7 +71,8 @@
+       <workItem from="1706525067989" duration="23000" />
+       <workItem from="1706525366383" duration="396000" />
+       <workItem from="1706530218372" duration="600000" />
+-      <workItem from="1706531798722" duration="3242000" />
++      <workItem from="1706531798722" duration="3446000" />
++      <workItem from="1706537186159" duration="13000" />
+     </task>
+     <task id="LOCAL-00001" summary="=&gt; saved">
+       <option name="closed" value="true" />
+@@ -98,7 +98,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1706525475657</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="=&gt; saved">
++      <option name="closed" value="true" />
++      <created>1706536412122</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1706536412122</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

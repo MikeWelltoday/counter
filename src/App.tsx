@@ -1,37 +1,40 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import './App.scss'
+import {Counter} from './components/counter/Counter'
 
 //======================================================================================================
 
+export type numType = 0 | 1 | 2 | 3 | 4 | 5
 
 //======================================================================================================
 
 function App() {
 
-    const [value, setValue] = useState(() => {
-        let valueAsString = localStorage.getItem('value')
-        if (valueAsString) {
-            let newValue = JSON.parse(valueAsString)
-            return newValue
-        } else return 1
-    })
+    const maxNum: numType = 5
+    const minNum: numType = 0
+    const [num, setNum] = useState<numType>(minNum)
 
-    useEffect(() => {
-        localStorage.setItem('value', JSON.stringify(value))
+    function increment() {
+        if (num < maxNum) setNum((num + 1) as numType)
+    }
 
-    }, [value])
-
-    function incrementOnClickHandler() {
-        setValue(value + 1)
+    function reset() {
+        setNum(minNum)
     }
 
     return (
         <div className={'App'}>
-            <h1>{value}</h1>
-            <button onClick={incrementOnClickHandler}>INC</button>
-
+            <Counter
+                maxNum={maxNum}
+                minNum={minNum}
+                value={num}
+                increment={increment}
+                reset={reset}/>
         </div>
     )
 }
 
 export default App
+
+
+
