@@ -1,26 +1,19 @@
 .counter {
-  width: 300px;
-  height: 250px;
-  border: 2px solid #66daff;
-  border-radius: 15px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  row-gap: 20px;
 }
 
 .display {
-  width: 200px;
-  background-color: #66daff;
-  text-align: center;
+  line-height: 2.4;
   font-size: 60px;
-  border-radius: 6px;
-  font-weight: 700;
 
-  color: #2a2c35;
+  p {
+    font-size: 27px;
+    line-height: 1.2;
+  }
 
-  line-height: 1.8;
+  p.error {
+    line-height: 3.5;
+    color: #c70808;
+  }
 
   &.active {
     color: #c70808;
@@ -28,14 +21,5 @@
 }
 
 .buttonsContainer {
-  width: 200px;
-  height: 70px;
 
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  column-gap: 20px;
-  border: 2px solid #66daff;
-  border-radius: 15px;
 }
