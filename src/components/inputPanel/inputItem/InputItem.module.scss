@@ -1,0 +1,34 @@
+.inputItem {
+  padding: 0 10px;
+
+  font-size: 30px;
+
+  display: flex;
+  column-gap: 40px;
+
+  label {
+    flex-grow: 1;
+  }
+
+  input {
+    background-color: #2a2c35;
+    max-width: 150px;
+    color: #66daff;
+    font-size: 26px;
+    text-align: center;
+    border: 2px solid #66daff;
+    font-weight: 700;
+    border-radius: 8px;
+
+    &.error {
+      background-color: #b90b0b;
+    }
+  }
+
+  input:focus, input:active {
+    border: 2px solid #a018d0;
+    outline: none;
+
+  }
+
+}

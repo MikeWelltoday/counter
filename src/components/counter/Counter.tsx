@@ -23,7 +23,7 @@ export const Counter: FC<CounterPropsType> = (props) => {
             <div className={`body__display ${S.display}`}>
                 {
                     props.error ? <p className={S.error}>incorrect value</p> :
-                        props.inputMode ? <><p>enter values and press</p> <p>[set] [Enter] [Escape]</p></> :
+                        props.inputMode ? <><p>enter values and press</p> <p>[ set ] or [ Enter ]</p></> :
                             <span className={`${props.num === props.maxNum && S.active}`}>{props.num}</span>
                 }
             </div>
