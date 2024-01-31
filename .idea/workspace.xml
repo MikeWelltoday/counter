@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1574361-4a83-49e4-a44f-21e9010d60c1" name="Changes" comment="=&gt; saved">
-      <change afterPath="$PROJECT_DIR$/src/components/inputPanel/inputItem/InputItem.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/inputPanel/inputItem/InputItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/counter/Counter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/Counter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/inputPanel/InputPanel.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inputPanel/InputPanel.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/inputPanel/InputPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inputPanel/InputPanel.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +53,7 @@
     "nodejs_package_manager_path": "yarn",
     "npm.start.executor": "Run",
     "settings.editor.selected.configurable": "editing.templates",
-    "ts.external.directory.path": "D:\\samurai-way\\samurai\\counter\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.2.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -104,6 +100,7 @@
       <workItem from="1706608026072" duration="4722000" />
       <workItem from="1706615271372" duration="6870000" />
       <workItem from="1706674843383" duration="1422000" />
+      <workItem from="1706683363689" duration="123000" />
     </task>
     <task id="LOCAL-00001" summary="=&gt; saved">
       <option name="closed" value="true" />

@@ -37,7 +37,7 @@ export const InputPanel: FC<InputPanelPropsType> = (props) => {
                            numChange={props.minNumChange}
                            inputModeChange={props.inputModeChange}
                            reset={props.reset}
-                >max Value</InputItem>
+                >min Value</InputItem>
             </div>
             <div className={`body__buttonsContainer ${S.buttonsContainer}`}>
                 <Button disabled={!!props.error || !props.inputMode}
