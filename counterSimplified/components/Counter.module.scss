@@ -1,0 +1,85 @@
+.counter {
+  width: 350px;
+
+  padding: 10px;
+  border: 2px solid #66daff;
+  border-radius: 15px;
+
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-row-gap: 10px;
+}
+
+.display {
+  grid-row: 1/2;
+
+  border: 2px solid #66daff;
+  border-radius: 15px;
+  padding: 0 25px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  color: #66daff;
+
+  .inputPanel {
+    width: 100%;
+
+    display: flex;
+    column-gap: 20px;
+
+    label {
+      flex-grow: 1;
+    }
+
+    input {
+      width: 100px;
+      border: 2px solid #66daff;
+      border-radius: 8px;
+      background-color: #2a2c35;
+      text-align: center;
+
+      color: #66daff;
+      font-size: 25px;
+
+      &:focus, &:active {
+        outline: none;
+        border: 3px solid mediumpurple;
+      }
+
+      &.error {
+        background-color: #702626;
+        border: 3px solid #da3071;
+      }
+    }
+
+  }
+
+  .num {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 700;
+
+    &.active {
+      color: #c70808;
+    }
+  }
+
+}
+
+.buttonsContainer {
+  grid-row: 2/3;
+
+  border: 2px solid #66daff;
+  border-radius: 15px;
+  padding: 15px 20px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}

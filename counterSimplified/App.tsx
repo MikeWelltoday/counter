@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './App.scss'
-import {Counter} from './components/counter/Counter'
-import {InputPanel} from './components/inputPanel/InputPanel'
+import {Counter} from './components/Counter'
 
 //======================================================================================================
 
@@ -9,90 +8,83 @@ export type ErrorType = '2' | '1' | ''
 
 //======================================================================================================
 
-function setInLocalStorage(name: string, item: number) {
-    localStorage.setItem(name, JSON.stringify(item))
+function setToLocalStorage(name: string, num: number) {
+    localStorage.setItem(name, JSON.stringify(num))
 }
 
 function getFromLocalStorage(name: string) {
-    let valueAsString = localStorage.getItem(name)
-    if (valueAsString) {
-        return JSON.parse(valueAsString)
+    const value = localStorage.getItem(name)
+    if (value) {
+        return JSON.parse(value)
     }
 }
 
 //======================================================================================================
 
+
 function App() {
 
-    const initialMaxNum = 20
-    const initialMinNum = 10
+    let [initialMaxNum, initialMinNum] = [10, 0]
 
     const [maxNum, setMaxNum] = useState(() => getFromLocalStorage('maxNum') || initialMaxNum)
     const [minNum, setMinNum] = useState(() => getFromLocalStorage('minNum') || initialMinNum)
-    const [num, setNum] = useState(() => getFromLocalStorage('num') || initialMinNum)
+    const [num, setNum] = useState(() => getFromLocalStorage('num') || minNum)
     const [inputMode, setInputMode] = useState(false)
     const [error, setError] = useState<ErrorType>('')
 
+    function setMaxNumOnChange(num: number) {
+        setMaxNum(num)
+    }
+
+    function setMinNumOnChange(num: number) {
+        setMinNum(num)
+    }
+
     useEffect(() => {
-        setInLocalStorage('maxNum', maxNum)
+        setToLocalStorage('maxNum', maxNum)
     }, [maxNum])
 
     useEffect(() => {
-        setInLocalStorage('minNum', minNum)
+        setToLocalStorage('minNum', minNum)
     }, [minNum])
 
     useEffect(() => {
-        setInLocalStorage('num', num)
+        setToLocalStorage('num', num)
     }, [num])
 
     useEffect(() => {
         if (minNum < 0) setError('1')
         if (maxNum - minNum <= 0) setError('2')
-        if (maxNum - minNum > 0 && minNum >= 0) setError('')
+        if (maxNum - minNum > 0 && minNum > 0) setError('')
     }, [maxNum, minNum])
 
-    function maxNumChange(num: number) {
-        setMaxNum(num)
-    }
-
-    function minNumChange(num: number) {
-        setMinNum(num)
-    }
-
     function increment() {
-        if (num < maxNum) {
-            setNum(num + 1)
-        }
+        if (num < maxNum) setNum((num + 1))
     }
 
     function reset() {
         setNum(minNum)
     }
 
-    function inputModeChange(mode: boolean) {
-        setInputMode(mode)
+    function inputModeChange() {
+        setInputMode(!inputMode)
+        setNum(minNum)
     }
 
     return (
         <div className={'App'}>
-            <InputPanel
-                maxNum={maxNum}
-                minNum={minNum}
-                inputMode={inputMode}
-                error={error}
-                maxNumChange={maxNumChange}
-                minNumChange={minNumChange}
-                inputModeChange={inputModeChange}
-                reset={reset}
-            />
+
             <Counter
                 maxNum={maxNum}
                 minNum={minNum}
                 num={num}
                 inputMode={inputMode}
                 error={error}
+                setMaxNumOnChange={setMaxNumOnChange}
+                setMinNumOnChange={setMinNumOnChange}
                 increment={increment}
-                reset={reset}/>
+                reset={reset}
+                inputModeChange={inputModeChange}/>
         </div>
     )
 }
