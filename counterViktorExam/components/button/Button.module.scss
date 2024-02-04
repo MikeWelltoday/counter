@@ -1,0 +1,20 @@
+.button {
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #66daff;
+  outline: none;
+  border: 1px solid #66daff;
+  border-radius: 10px;
+  padding: 2px 10px;
+  cursor: pointer;
+
+  color: #2a2c35;
+
+  &.notActive {
+    opacity: 0.2;
+  }
+}
+
+.button:active {
+  transform: scale(1.1);
+}
