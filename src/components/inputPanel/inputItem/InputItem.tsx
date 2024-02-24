@@ -1,7 +1,8 @@
 import React, {ChangeEvent, FC, KeyboardEvent} from 'react'
 import S from './InputItem.module.scss'
 
-//======================================================================================================
+//========================================================================================
+// 🎲 .T.Y.P.E.S.
 
 type InputItemPropsType = {
     children: string
@@ -13,7 +14,8 @@ type InputItemPropsType = {
     reset: () => void
 }
 
-//======================================================================================================
+//========================================================================================
+// 🧁 .C.O.P.O.N.E.N.T.
 
 export const InputItem: FC<InputItemPropsType> = (props) => {
 
@@ -41,14 +43,15 @@ export const InputItem: FC<InputItemPropsType> = (props) => {
     return (
         <div className={S.inputItem}>
             <label htmlFor={props.id}>{props.children}</label>
-            <input className={props.className}
-                   id={props.id}
-                   type="number"
-                   value={props.value}
-                   onChange={numChangeOnChange}
-                   onFocus={inputModeChangeOnFocus}
-                   onBlur={inputModeChangeOnBlur}
-                   onKeyDown={inputModeChangeOnKeyDownHandler}
+            <input
+                className={props.className}
+                id={props.id}
+                type="number"
+                value={props.value}
+                onChange={numChangeOnChange}
+                onFocus={inputModeChangeOnFocus}
+                onBlur={inputModeChangeOnBlur}
+                onKeyDown={inputModeChangeOnKeyDownHandler}
             />
         </div>
     )

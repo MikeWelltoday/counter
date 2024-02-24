@@ -2,48 +2,33 @@ import React, {useEffect, useState} from 'react'
 import './App.scss'
 import {Counter} from './components/counter/Counter'
 import {InputPanel} from './components/inputPanel/InputPanel'
+import {useDispatch, useSelector} from 'react-redux'
+import {StateType} from './store/store'
+import {maxNumNemValueAC} from './store/maxNum-reducer/maxNum-reducer'
+import {minNumNemValueAC} from './store/minNum-reducer/minNum-reducer'
+import {numNewValueAC, numReducerIncrementAC} from './store/num-reducer/num-reducer'
 
-//======================================================================================================
+//========================================================================================
 
 export type ErrorType = '2' | '1' | ''
 
-//======================================================================================================
-
-function setInLocalStorage(name: string, item: number) {
-    localStorage.setItem(name, JSON.stringify(item))
-}
-
-function getFromLocalStorage(name: string) {
-    let valueAsString = localStorage.getItem(name)
-    if (valueAsString) {
-        return JSON.parse(valueAsString)
-    }
-}
-
-//======================================================================================================
+//========================================================================================
+// 🍇 .A.P.P.
 
 function App() {
 
-    const initialMaxNum = 20
-    const initialMinNum = 10
+    const dispatch = useDispatch()
 
-    const [maxNum, setMaxNum] = useState(() => getFromLocalStorage('maxNum') || initialMaxNum)
-    const [minNum, setMinNum] = useState(() => getFromLocalStorage('minNum') || initialMinNum)
-    const [num, setNum] = useState(() => getFromLocalStorage('num') || initialMinNum)
+    const maxNum = useSelector((state: StateType) => state.maxNum)
+    const minNum = useSelector((state: StateType) => state.minNum)
+    const num = useSelector((state: StateType) => state.num)
+
+    const myState = useSelector((state: StateType) => state)
+    console.log(myState)
+
     const [inputMode, setInputMode] = useState(false)
     const [error, setError] = useState<ErrorType>('')
 
-    useEffect(() => {
-        setInLocalStorage('maxNum', maxNum)
-    }, [maxNum])
-
-    useEffect(() => {
-        setInLocalStorage('minNum', minNum)
-    }, [minNum])
-
-    useEffect(() => {
-        setInLocalStorage('num', num)
-    }, [num])
 
     useEffect(() => {
         if (minNum < 0) setError('1')
@@ -52,21 +37,21 @@ function App() {
     }, [maxNum, minNum])
 
     function maxNumChange(num: number) {
-        setMaxNum(num)
+        dispatch(maxNumNemValueAC(num))
     }
 
     function minNumChange(num: number) {
-        setMinNum(num)
+        dispatch(minNumNemValueAC(num))
     }
 
     function increment() {
         if (num < maxNum) {
-            setNum(num + 1)
+            dispatch(numReducerIncrementAC())
         }
     }
 
     function reset() {
-        setNum(minNum)
+        dispatch(numNewValueAC(minNum))
     }
 
     function inputModeChange(mode: boolean) {
