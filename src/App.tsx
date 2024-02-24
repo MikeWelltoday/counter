@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import './App.scss'
 import {Counter} from './components/counter/Counter'
 import {InputPanel} from './components/inputPanel/InputPanel'
@@ -23,8 +23,6 @@ function App() {
     const minNum = useSelector((state: StateType) => state.minNum)
     const num = useSelector((state: StateType) => state.num)
 
-    const myState = useSelector((state: StateType) => state)
-    console.log(myState)
 
     const [inputMode, setInputMode] = useState(false)
     const [error, setError] = useState<ErrorType>('')
@@ -36,27 +34,28 @@ function App() {
         if (maxNum - minNum > 0 && minNum >= 0) setError('')
     }, [maxNum, minNum])
 
-    function maxNumChange(num: number) {
+
+    const maxNumChange = useCallback((num: number) => {
         dispatch(maxNumNemValueAC(num))
-    }
+    }, [dispatch])
 
-    function minNumChange(num: number) {
+    const minNumChange = useCallback((num: number) => {
         dispatch(minNumNemValueAC(num))
-    }
+    }, [dispatch])
 
-    function increment() {
+    const increment = useCallback(() => {
         if (num < maxNum) {
             dispatch(numReducerIncrementAC())
         }
-    }
+    }, [dispatch, num, maxNum])
 
-    function reset() {
+    const reset = useCallback(() => {
         dispatch(numNewValueAC(minNum))
-    }
+    }, [dispatch, minNum])
 
-    function inputModeChange(mode: boolean) {
+    const inputModeChange = useCallback((mode: boolean) => {
         setInputMode(mode)
-    }
+    }, [setInputMode])
 
     return (
         <div className={'App'}>

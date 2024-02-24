@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, KeyboardEvent} from 'react'
+import React, {ChangeEvent, FC, KeyboardEvent, memo, useCallback} from 'react'
 import S from './InputItem.module.scss'
 
 //========================================================================================
@@ -17,28 +17,31 @@ type InputItemPropsType = {
 //========================================================================================
 // 🧁 .C.O.P.O.N.E.N.T.
 
-export const InputItem: FC<InputItemPropsType> = (props) => {
+export const InputItem: FC<InputItemPropsType> = memo((props) => {
 
-    function numChangeOnChange(event: ChangeEvent<HTMLInputElement>) {
-        props.numChange(parseInt(event.currentTarget.value, 10))
+    console.log('INPUT-ITEM')
+
+    const numChangeOnChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+        const value = parseInt(event.currentTarget.value, 10)
+        props.numChange(value)
         props.inputModeChange(true)
-    }
+    }, [props.numChange, props.inputModeChange])
 
-    function inputModeChangeOnFocus() {
+    const inputModeChangeOnFocus = useCallback(() => {
         props.inputModeChange(true)
-    }
+    }, [props.inputModeChange])
 
-    function inputModeChangeOnBlur() {
+    const inputModeChangeOnBlur = useCallback(() => {
         props.reset()
         props.inputModeChange(false)
-    }
+    }, [props.reset, props.inputModeChange])
 
-    function inputModeChangeOnKeyDownHandler(event: KeyboardEvent<HTMLInputElement>) {
+    const inputModeChangeOnKeyDownHandler = useCallback((event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             inputModeChangeOnBlur()
             event.currentTarget.blur()
         }
-    }
+    }, [inputModeChangeOnBlur])
 
     return (
         <div className={S.inputItem}>
@@ -55,4 +58,4 @@ export const InputItem: FC<InputItemPropsType> = (props) => {
             />
         </div>
     )
-}
+})

@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from 'react'
+import React, {FC, memo, ReactNode, useCallback} from 'react'
 import S from './Button.module.scss'
 
 //========================================================================================
@@ -13,13 +13,21 @@ type ButtonPropsType = {
 //========================================================================================
 // 🧁 .C.O.P.O.N.E.N.T.
 
-export const Button: FC<ButtonPropsType> = (props) => {
+
+export const Button: FC<ButtonPropsType> = memo((props) => {
+
+    console.log('BUTTON')
+
+    const onClickHandler = useCallback(() => {
+        props.onClick()
+    }, [props.onClick])
+
     return (
         <button className={`${S.button} ${props.disabled && S.notActive}`}
-                onClick={props.onClick}
+                onClick={onClickHandler}
                 disabled={props.disabled}
         >
             {props.children}
         </button>
     )
-}
+})

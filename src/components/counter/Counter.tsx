@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, {FC, memo, useCallback} from 'react'
 import S from './Counter.module.scss'
 import {Button} from '../button/Button'
 import {ErrorType} from '../../App'
@@ -19,7 +19,15 @@ type CounterPropsType = {
 //========================================================================================
 // 🧁 .C.O.P.O.N.E.N.T.
 
-export const Counter: FC<CounterPropsType> = (props) => {
+export const Counter: FC<CounterPropsType> = memo((props) => {
+
+    console.log('COUNTER')
+
+    const increment = useCallback(() => props.increment(), [props.increment])
+
+    const reset = useCallback(() => props.reset(), [props.reset])
+
+
     return (
         <div className={`body ${S.counter}`}>
             <div className={`body__display ${S.display}`}>
@@ -33,17 +41,17 @@ export const Counter: FC<CounterPropsType> = (props) => {
             <div className={`body__buttonsContainer ${S.buttonsContainer}`}>
                 <Button
                     disabled={props.num === props.maxNum || !!props.error || props.inputMode}
-                    onClick={props.increment}
+                    onClick={increment}
                 >
                     inc
                 </Button>
                 <Button
                     disabled={props.num === props.minNum || !!props.error || props.inputMode}
-                    onClick={props.reset}
+                    onClick={reset}
                 >
                     reset
                 </Button>
             </div>
         </div>
     )
-}
+})

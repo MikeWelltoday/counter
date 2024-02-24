@@ -8,7 +8,6 @@ export function loadState(): any {
 
         // если не достаним значение, то вернем undefined
         if (serializedState === null) {
-            // return {maxNum: 10, minNum: 0, num: 0}
             return undefined
         }
 
@@ -16,7 +15,6 @@ export function loadState(): any {
         return JSON.parse(serializedState)
     } catch (err) {
         return undefined
-        // return {maxNum: 10, minNum: 0, num: 0}
     }
 }
 
