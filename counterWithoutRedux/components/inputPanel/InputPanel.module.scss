@@ -1,0 +1,19 @@
+.inputPanel {
+
+
+}
+
+.display {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 30px;
+  justify-content: center;
+
+  & div input.error {
+    background-color: #b90b0b;
+  }
+}
+
+.buttonsContainer {
+
+}

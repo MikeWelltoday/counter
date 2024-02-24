@@ -1,0 +1,25 @@
+.counter {
+}
+
+.display {
+  line-height: 2.4;
+  font-size: 60px;
+
+  p {
+    font-size: 27px;
+    line-height: 1.2;
+  }
+
+  p.error {
+    line-height: 3.5;
+    color: #c70808;
+  }
+
+  & span.active {
+    color: #c70808;
+  }
+}
+
+.buttonsContainer {
+
+}
