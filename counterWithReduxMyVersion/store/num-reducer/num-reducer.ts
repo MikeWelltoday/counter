@@ -1,11 +1,8 @@
 //========================================================================================
-// 🎲 .T.Y.P.E.S.
 
 type ActionType = ReturnType<typeof numReducerIncrementAC> | ReturnType<typeof numNewValueAC>
 
-
 //========================================================================================
-// 🍌 .A.C.
 
 export function numReducerIncrementAC() {
     return {type: 'INCREMENT', payload: {}} as const
@@ -16,7 +13,6 @@ export function numNewValueAC(newValue: number) {
 }
 
 //========================================================================================
-// 🧰 .R.E.D.U.C.E.R.
 
 export function numReducer(state: number = 0, {type, payload}: ActionType): number {
 

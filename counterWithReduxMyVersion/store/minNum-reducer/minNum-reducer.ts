@@ -1,24 +1,21 @@
 //========================================================================================
-// 🎲 .T.Y.P.E.S.
 
-type ActionType = ReturnType<typeof maxNumNemValueAC>
+type ActionType = ReturnType<typeof minNumNemValueAC>
 
 
 //========================================================================================
-// 🍌 .A.C.
 
-export function maxNumNemValueAC(newValue: number) {
-    return {type: 'MAX-NUM-NEW-VALUE', payload: {newValue}} as const
+export function minNumNemValueAC(newValue: number) {
+    return {type: 'MIN-NUM-NEW-VALUE', payload: {newValue}} as const
 }
 
 //========================================================================================
-// 🧰 .R.E.D.U.C.E.R.
 
-export function maxNumReducer(state: number = 10, {type, payload}: ActionType): number {
+export function minNumReducer(state: number = 0, {type, payload}: ActionType): number {
 
     switch (type) {
 
-        case'MAX-NUM-NEW-VALUE': {
+        case'MIN-NUM-NEW-VALUE': {
             return payload.newValue
         }
 

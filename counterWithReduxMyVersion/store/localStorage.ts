@@ -1,8 +1,9 @@
 import {StateType} from './store'
 
+//========================================================================================
 
 // [ GET-STATE ]
-export function loadState(): any {
+export function loadState() {
     try {
         const serializedState = localStorage.getItem('state')
 
@@ -13,6 +14,7 @@ export function loadState(): any {
 
         //  если вернем значение, то возращаем его
         return JSON.parse(serializedState)
+
     } catch (err) {
         return undefined
     }
@@ -25,7 +27,8 @@ export function saveState(state: StateType) {
         // просто пытаемся засетать значение
         const serializedState = JSON.stringify(state)
         localStorage.setItem('state', serializedState)
-    } catch {
+    } catch (err) {
         // ну походу не вышло засетать
+        console.error('ERROR')
     }
 }

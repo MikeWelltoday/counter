@@ -1,0 +1,49 @@
+.App {
+  background-color: #2a2c35;
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 150px;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+  padding: 15px;
+  border: 2px solid #66daff;
+  border-radius: 15px;
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 15px;
+
+  &__display {
+    grid-row: 1/3;
+
+    border: 2px solid #66daff;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 700;
+
+    color: #66daff;
+  }
+
+  &__buttonsContainer {
+    grid-row: 3/4;
+
+    padding: 15px 45px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 60px;
+    border: 2px solid #66daff;
+    border-radius: 15px;
+  }
+}
+
+
+

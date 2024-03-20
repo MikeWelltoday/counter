@@ -1,4 +1,4 @@
-import {combineReducers, createStore} from 'redux'
+import {combineReducers, legacy_createStore} from 'redux'
 import {maxNumReducer} from './maxNum-reducer/maxNum-reducer'
 import {minNumReducer} from './minNum-reducer/minNum-reducer'
 import {numReducer} from './num-reducer/num-reducer'
@@ -6,13 +6,10 @@ import {loadState, saveState} from './localStorage'
 import {throttle} from 'lodash'
 
 //========================================================================================
-// 🎲 .T.Y.P.E.S.
 
 export type StateType = ReturnType<typeof rootReducer>
 
-
 //========================================================================================
-// 💾 .S.T.O.R.E.
 
 const rootReducer = combineReducers({
     maxNum: maxNumReducer,
@@ -23,9 +20,9 @@ const rootReducer = combineReducers({
 // для localStorage
 const persistedState = loadState()
 
-export const store = createStore(
+// @ts-ignore
+export const store = legacy_createStore(
     rootReducer,
-
 
     // начальное значение загружается из localStorage
     persistedState
@@ -35,7 +32,9 @@ export const store = createStore(
 // для localStorage
 // Throttle - пропускает вызовы функции с определённой периодичностью.
 store.subscribe(throttle(() => {
+
     saveState(store.getState())
+
 }, 1000))
 
 // @ts-ignore
