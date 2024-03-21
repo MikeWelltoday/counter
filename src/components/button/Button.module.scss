@@ -1,0 +1,19 @@
+.button {
+  font-size: 30px;
+  font-weight: 700;
+  background-color: #66daff;
+  border: none;
+  border-radius: 10px;
+  padding: 2px 25px;
+  cursor: pointer;
+
+  color: #2a2c35;
+
+  &.notActive {
+    opacity: 0.2;
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+}

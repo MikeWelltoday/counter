@@ -1,4 +1,4 @@
-import {AppThunkDispatchType} from './store'
+import {AppRootReducerType, AppThunkDispatchType} from './store'
 
 type NumIncrementActionType = ReturnType<typeof numIncrementAC>
 export type numAllActionsType = NumIncrementActionType
@@ -9,14 +9,14 @@ export type numAllActionsType = NumIncrementActionType
 function getInitialStateFromLocalStore() {
     const stateFromLocalStorage = localStorage.getItem('num')
     if (stateFromLocalStorage === null) {
-        return 2
+        return 0
     }
     return JSON.parse(stateFromLocalStorage)
 }
 
-const numInitialState = getInitialStateFromLocalStore()
+const numInitialState: number = getInitialStateFromLocalStore()
 
-export function numReducer(state = numInitialState, action: numAllActionsType) {
+export function numReducer(state: number = numInitialState, action: numAllActionsType): number {
     switch (action.type) {
 
         case 'NUM-INCREMENT': {
@@ -37,9 +37,9 @@ export function numIncrementAC() {
 
 //========================================================================================
 
-export function numIncrementTC(num: number) {
-    return (dispatch: AppThunkDispatchType) => {
-        localStorage.setItem('num', JSON.stringify(num + 1))
+export function numIncrementTC() {
+    return (dispatch: AppThunkDispatchType, getState: () => AppRootReducerType) => {
+        localStorage.setItem('num', JSON.stringify(getState().num + 1))
         dispatch(numIncrementAC())
     }
 }

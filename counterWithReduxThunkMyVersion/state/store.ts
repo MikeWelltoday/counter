@@ -15,23 +15,6 @@ export const useAppDispatch = () => useDispatch<AppThunkDispatchType>()
 
 //========================================================================================
 
-// function getInitialStateFromLocalStore() {
-//
-//
-//     const stateFromLocalStorage = localStorage.getItem('num')
-//
-//     if (stateFromLocalStorage) {
-//         return 10
-//     }
-//
-//     return +JSON.stringify(stateFromLocalStorage)
-// }
-//
-// const appInitialState = getInitialStateFromLocalStore()
-
-
-//========================================================================================
-
 const rootReducer = combineReducers({
     num: numReducer
 })
